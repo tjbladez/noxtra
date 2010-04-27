@@ -1,6 +1,10 @@
-%h1 Basic Dashboard
-- @projects.each do |project|
-  .bar
-    .name= project.name
-    .sha= project.sha
-
+%head
+  %title "NoXtra: No Extra Features, No Extra Pain"
+  %link{:rel => "stylesheet", :href => "/application.css", :type => "text/css"}
+%body
+  %h1 NoXtra Dashboard: Only what you need
+  .projects.rounded-corners
+    - @projects.each_with_index do |project, index|
+      %div{:class => "status #{project.status}"}
+        %a.name{:href => "http://ci.transis.net/#{project.name}"}= project.name
+        .sha= project.sha

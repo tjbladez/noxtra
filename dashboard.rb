@@ -1,25 +1,28 @@
 require 'sinatra/base'
 require 'ostruct'
-require 'activerecord'
+require 'yaml'
+require 'sass'
 module Dashboard
   class Api < Sinatra::Base
-    ActiveRecord::Base.establish_connection(
-      :adapter => 'sqlite3',
-      :dbfile =>  'dashboard_app.sqlite3.db'
-    )
-
-    class Project < ActiveRecord::Base
-      attr_accessor :name, :status, :latest_sha
-    end
 
     post '/builds' do
-      "Passed in params are #{params.inspect}"
+      data = YAML.load_file('dataset.yml')
+      data[params.delete('name')].merge!(params)
+      File.open('dataset.yml','w+') { |file| file.write data.to_yaml}
     end
 
     get '/' do
-      @projects = [OpenStruct.new(:status => 'ready', :name => 'test', :latest_sha => '123123' ),
-                   OpenStruct.new(:status => 'ready', :name => 'test2', :latest_sha => '23' )]
+      data = YAML.load_file('dataset.yml')
+      @projects = data.map do |k,v|
+        project = OpenStruct.new(v)
+        project.name = k
+        project
+      end
       haml :index
+    end
+
+    get '/application.css' do
+      sass :style
     end
   end
 end

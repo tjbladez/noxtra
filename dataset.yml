@@ -1,0 +1,12 @@
+social25:
+  status: 'pass'
+  sha: '6d02194a06f618c874958a65a7499af66c1ea6ea'
+peppercanister:
+  status: 'pass'
+  sha: '8019c9c34cb48bd574ec693dab1dd28a9a0b2ab1'
+loggins:
+  status: 'fail'
+  sha: '730879a5905e3dbb388cdb5e551cfff612d720f7'
+transis-ui:
+  status: 'pass'
+  sha: '27e2a48b6443994d017924092e5b312ab5f783e0'
