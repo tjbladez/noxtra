@@ -1,5 +1,5 @@
 require 'dashboard'
 use Rack::Auth::Basic do |username, password|
-  username == 'ci' && password == 'transis'
+  username == 'user' && password == 'secret'
 end
 run Dashboard::Api
