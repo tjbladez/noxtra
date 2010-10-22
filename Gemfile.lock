@@ -1,13 +1,31 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    columnize (0.3.1)
     daemons (1.1.0)
     eventmachine (0.12.10)
     haml (3.0.22)
+    linecache (0.43)
     rack (1.2.1)
+    rack-test (0.5.6)
+      rack (>= 1.0)
     rake (0.8.7)
+    riot (0.12.0)
+      rr
+      term-ansicolor
+    riot-rack (0.0.1)
+      rack
+      rack-test
+      riot
+    rr (1.0.0)
+    ruby-debug (0.10.3)
+      columnize (>= 0.1)
+      ruby-debug-base (~> 0.10.3.0)
+    ruby-debug-base (0.10.3)
+      linecache (>= 0.3)
     sinatra (1.0)
       rack (>= 1.0)
+    term-ansicolor (1.0.5)
     thin (1.2.7)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -18,6 +36,10 @@ PLATFORMS
 
 DEPENDENCIES
   haml
+  rack-test
   rake
+  riot
+  riot-rack
+  ruby-debug
   sinatra
   thin

@@ -5,8 +5,11 @@ module Dashboard
 
     post '/builds' do
       data = YAML.load_file('data/dataset.yml')
+      halt 400, '☠ bad request' unless params.any? 
+
       data[params.delete('name')].merge!(params)
       File.open('dataset.yml','w+') { |file| file.write data.to_yaml}
+      "✓ status updated"
     end
 
     get '/' do
