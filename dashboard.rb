@@ -5,10 +5,10 @@ module Dashboard
 
     post '/builds' do
       data = YAML.load_file('data/dataset.yml')
-      halt 400, '☠ bad request' unless params.any? 
-
+      halt 400, '☠ bad request' unless params.any?
+      
       data[params.delete('name')].merge!(params)
-      File.open('dataset.yml','w+') { |file| file.write data.to_yaml}
+      update_dataset(data)
       "✓ status updated"
     end
 
@@ -24,6 +24,11 @@ module Dashboard
 
     get '/application.css' do
       sass :style
+    end
+    
+  private
+    def update_dataset(data)
+     File.open('dataset.yml','w+') { |file| file.write data.to_yaml} if ENV['APP_ENV'] != 'test'
     end
   end
 end
