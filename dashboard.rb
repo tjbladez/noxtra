@@ -4,13 +4,13 @@ module Dashboard
   class Api < Sinatra::Base
 
     post '/builds' do
-      data = YAML.load_file('dataset.yml')
+      data = YAML.load_file('data/dataset.yml')
       data[params.delete('name')].merge!(params)
       File.open('dataset.yml','w+') { |file| file.write data.to_yaml}
     end
 
     get '/' do
-      data = YAML.load_file('dataset.yml')
+      data = YAML.load_file('data/dataset.yml')
       @projects = data.map do |k,v|
         project = OpenStruct.new(v)
         project.name = k
