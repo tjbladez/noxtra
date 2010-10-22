@@ -1,5 +1,5 @@
 %head
-  %title "NoXtra: No Extra Features, No Extra Pain"
+  %title NoXtra: No Extra Features, No Extra Pain
   %link{:rel => "stylesheet", :href => "/application.css", :type => "text/css"}
 %body
   %h1 NoXtra Dashboard
@@ -7,4 +7,4 @@
     - @projects.each_with_index do |project, index|
       %div{:class => "status #{project.status}"}
         %a.name{:href => "http://yourcijoehost#{project.name}"}= project.name
-        .sha= project.sha
+        %a.sha{:href => "https://github.com/#{project.owner}/#{project.name}/commit/#{project.sha}"}= project.sha

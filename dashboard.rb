@@ -28,7 +28,7 @@ module Dashboard
     
   private
     def update_dataset(data)
-     File.open('dataset.yml','w+') { |file| file.write data.to_yaml} if ENV['APP_ENV'] != 'test'
+     File.open('data/dataset.yml','w+') { |file| file.write data.to_yaml} if ENV['APP_ENV'] != 'test'
     end
   end
 end
