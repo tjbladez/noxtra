@@ -1,9 +1,14 @@
+$grey: #777777
+$light-green: #1AE30B
+$dark-green: #095103
+$light-red: #f41818
+
 body
   font-size: 13px
   color: #095103
-  background-color: #777777
+  background-color: $grey
 .projects
-  border-color: #095103
+  border-color: $dark-green
   border-style: solid
   border-width: 3px 5px 3px 3px
   float: left
@@ -21,14 +26,14 @@ body
     -webkit-border-bottom-right-radius: 9px
     -webkit-border-bottom-left-radius: 9px
 .pass
-  background-color: #1AE30B
+  background-color: $light-green
 .fail
-  background-color: #f41818
+  background-color: $light-red
 .status
   float: left
   clear: both
   width: 100%
-  border: 1px solid #095103
+  border: 1px solid $dark-green
   height: 24px
   line-height: 24px
   .name
@@ -36,12 +41,12 @@ body
     float: left
     vertical-align: middle
     width: 40%
-    color: #095103
+    color: $dark-green
   .sha
     float: left
     text-align: center
     vertical-align: middle
     width: 60%
-    color: #095103
+    color: $dark-green
     cursor: pointer
     text-decoration: underline
