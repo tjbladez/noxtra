@@ -1,7 +1,5 @@
-require 'sinatra/base'
-require 'ostruct'
-require 'yaml'
-require 'sass'
+require File.join(File.dirname(__FILE__), 'config', 'boot')
+
 module Dashboard
   class Api < Sinatra::Base
 
