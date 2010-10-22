@@ -22,3 +22,18 @@ Rake::TestTask.new do |t|
   t.test_files = FileList['test/**/*_test.rb']
   t.verbose = true
 end
+
+desc "Deployment"
+task :deploy do
+  commands = [
+      'cd /mylocation/noxtra',
+      'git fetch',
+      'git checkout -f origin/master',
+      'mkdir -p public',
+      'mkdir -p tmp',
+      'bundle install --deployment',
+      'touch tmp/restart.txt'
+    ]
+  puts "Deplying..."
+  exec "ssh myuser@myhost '#{commands.join(' && ')}'"
+end
