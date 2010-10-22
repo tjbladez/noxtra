@@ -1,5 +1,12 @@
-NoXtra
-======
+  !!!plain
+       __    __  ___             
+    /\ \ \___\ \/ / |_ _ __ __ _ 
+   /  \/ / _ \\  /| __| '__/ _` |
+  / /\  / (_) /  \| |_| | | (_| |
+  \_\ \/ \___/_/\_\\__|_|  \__,_|
 
-NoXtra is extremely lightweight basic dashboard app built for support of multiple [CI Joe](http://github.com/defunkt/cijoe)
-projects. How lightweight? Well it has 2 methods, no extra features, no extra pain.
+## What is it
+
+NoXtra is lightweight dashboard app built for support of multiple [CI Joe](http://github.com/defunkt/cijoe)
+projects.
+
