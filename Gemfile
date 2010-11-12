@@ -3,6 +3,7 @@ source :rubygems
 gem "sinatra"
 gem "haml"
 gem "rake"
+gem "mail"
 
 group :development do
 	gem "thin"
