@@ -1,0 +1,22 @@
+comradefy:
+- status: pass
+  sha: fcd3489930f737a6f501
+  message: "Testing russian"
+  author: "tj"
+  time: "12:45:03"
+- status: pass
+  sha: 45c674898fd3fa6f501
+  message: "Testing english"
+  author: "Crazy Russki"
+  time: "14:23:45"
+quote:
+- status: fail
+  sha: 886cfe563999da5d928a
+  message: "adding quote"
+  author: "tj"
+  time: "09:10:12"
+- status: pass
+  sha: 62f683399a24d2194f7e
+  message: "deleting quote"
+  author: "Crazy Russki"
+  time: "16:43:06"
